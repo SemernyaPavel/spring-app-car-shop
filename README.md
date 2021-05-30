@@ -1,2 +1,2 @@
 # spring-app-car-shop
-REST app
+CRUD app
