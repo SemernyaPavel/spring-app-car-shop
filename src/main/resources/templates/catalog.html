@@ -52,7 +52,7 @@
             <div class="wrapper">
             	<div class="grid_24 content-bg">
             	
-                		<div><h1><font color="red">Cars Catalog</font></h1></div>
+                		<h1><font color="red">Cars Catalog</font></h1>
                 		<article class="grid_15 suffix_1 omega">
                 		<form id="contact-form" method="post">
                 		<fieldset>
@@ -71,12 +71,12 @@
                                 		<table>
                                     	<tr>
                                     		<th><h3> Model </h3></th>
-                                    		<th><h3> Max Speed </h3></th>
+                                    		<th><h3> Cost </h3></th>
                                     	</tr>
                                         <tr th:if="${cars.empty}"><h4>No Car Available</h4></tr>
                                 		<tr th:each="cars : ${cars}">
-                                            <td><a href="/soon"><h5><span th:text="${cars.carModel}"> Model </span></h5></a></td>
-                                            <td><h5><span th:text="${cars.maxSpeed}"> Max Speed </span></h5></td>
+                                            <td><a th:href="@{/catalog/{/id}(id=${cars.id})}"><h5><span th:text="${cars.carModel}"> Model </span></h5></a></td>
+                                            <td><h5><span th:text="${cars.cost}"> Cost </span>$</h5></td>
                                         </tr>
                                         <tr>
                                         </table>

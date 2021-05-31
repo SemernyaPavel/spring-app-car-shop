@@ -5,21 +5,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.sun.istack.NotNull;
+
 
 @Entity
 public class Car {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private String description;
 	
+	private String description;
 	private String carModel;
 	private int maxSpeed;
+	@NotNull
+	private int cost;
 
 	public Car() {	}
 	
-	public Car(String carModel, int maxSpeed, String description) {
+	public Car(String carModel, int cost, int maxSpeed, String description) {
 		this.carModel = carModel;
+		this.cost = cost;
 		this.maxSpeed = maxSpeed;
 		this.description = description;
 	}
@@ -54,5 +59,13 @@ public class Car {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
 	}
 }

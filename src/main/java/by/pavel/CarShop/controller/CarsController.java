@@ -2,10 +2,13 @@ package by.pavel.CarShop.controller;
 
 
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +25,7 @@ public class CarsController {
 	
 	
 	@GetMapping
-	public String showOneCar(Map<String, Object> model) {
+	public String showCarCatalog(Map<String, Object> model) {
 		Iterable<Car> cars = carRepository.findAll();
 		
 		model.put("cars", cars);
@@ -33,18 +36,25 @@ public class CarsController {
 	@GetMapping("/create")
 	public String addNewCar(Map<String, Object> model) {
 		Iterable<Car> cars = carRepository.findAll();
-		
 		model.put("cars", cars);
-		
 		return "newCar";
+	}
+	
+	@GetMapping("/{id}")
+	public String showOneCar(@PathVariable("id") int id, Model model) {
+		Optional<Car> optionalCar = carRepository.findById((long) id);
+		Car car = optionalCar.get();
+		model.addAttribute("car", car);
+		return "oneCar";
 	}
 	
 	@PostMapping("/create")
 	public String addCar(@RequestParam String carModel,
+						@RequestParam int cost,
 						@RequestParam int maxSpeed,
-						@RequestParam String description,
+						@RequestParam String description, 
 						Map<String, Object> model) {
-		Car car = new Car(carModel, maxSpeed, description);
+		Car car = new Car(carModel, cost, maxSpeed, description);
 		
 		carRepository.save(car);
 		
@@ -53,8 +63,7 @@ public class CarsController {
 	
 	@PostMapping
 	public String filter(@RequestParam String filter,
-			Map<String, Object> model) 
-	{
+			Map<String, Object> model) {
 		Iterable<Car> cars;
 		
 		if(filter != null && !filter.isEmpty()) {
