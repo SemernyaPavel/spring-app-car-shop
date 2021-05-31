@@ -11,17 +11,17 @@ public class Car {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	private String description;
 	
 	private String carModel;
 	private int maxSpeed;
-	private String img;
 
 	public Car() {	}
 	
-	public Car(String carModel, int maxSpeed , String img) {
+	public Car(String carModel, int maxSpeed, String description) {
 		this.carModel = carModel;
 		this.maxSpeed = maxSpeed;
-		this.img = img;
+		this.description = description;
 	}
 	
 	public String getCarModel() {
@@ -48,12 +48,11 @@ public class Car {
 		this.maxSpeed = maxSpeed;
 	}
 
-	public String getImg() {
-		return img;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setImg(String img) {
-		this.img = img;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
 }

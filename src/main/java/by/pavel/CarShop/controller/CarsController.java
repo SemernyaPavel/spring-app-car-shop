@@ -42,10 +42,9 @@ public class CarsController {
 	@PostMapping("/create")
 	public String addCar(@RequestParam String carModel,
 						@RequestParam int maxSpeed,
-						@RequestParam String img,
-						Map<String, Object> model) 
-	{
-		Car car = new Car(carModel, maxSpeed, img);
+						@RequestParam String description,
+						Map<String, Object> model) {
+		Car car = new Car(carModel, maxSpeed, description);
 		
 		carRepository.save(car);
 		

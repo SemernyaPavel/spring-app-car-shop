@@ -32,7 +32,8 @@
     <header>
     	<div class="inner">
             <h1 class="logo"><a href="home">CarShop - Best company</a></h1>
-            Login page
+            Add new user
+            
         <div th:if="${param.error}">
         	<font color="red">
             Invalid username and password.
@@ -41,11 +42,10 @@
         <div th:if="${param.logout}">
             You have been logged out.
         </div>
-        <form th:action="@{/login}" method="post">
+        <form th:action="@{/registration}" method="post">
             <div><fieldset><label class="name"> User Name : <input type="text" name="username"/> </label></fieldset></div>
             <div><fieldset><label class="name"> Password: <input type="password" name="password"/> </label></fieldset></div>
             <div><input type="submit" value="Sign In"/></div>
-            <a href="/registration">Add new user</a>
         </form>
         </div>
         </header>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   	<title>CarShop</title>
   	<meta charset="utf-8">
@@ -67,6 +67,9 @@
                                     <h4>we would like to help you decide on your first choice!</h4>
                                     <blockquote class="quote indent-right">
                                         <strong>This website template has several pages:  Home, Products, Technology, Pricing, Contacts</strong> Add something
+                                    <form th:action="@{/logout}" method="post">
+      							      <input type="submit" value="Sign Out"/>
+     							   </form>
                                     </blockquote>
                                     <div class="alignright indent-right">
                                         <span class="author">John Smith <i>(manager)</i></span>
@@ -103,7 +106,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    
     <!-- Footer -->
     <footer>
     	<div class="container_24">
