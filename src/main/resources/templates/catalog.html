@@ -58,6 +58,7 @@
                 		<fieldset>
                 		<label class="name">
                 			<input type="text" name="filter" />
+                			<input type='hidden' value='${_csrf.token}' name='_csrf'/>
                 		</label>
                 		</fieldset>
                 			<button type="submit">Find by model</button>
@@ -71,13 +72,11 @@
                                     	<tr>
                                     		<th><h3> Model </h3></th>
                                     		<th><h3> Max Speed </h3></th>
-                                    		<th><h3> Description </h3></th>
                                     	</tr>
                                         <tr th:if="${cars.empty}"><h4>No Car Available</h4></tr>
                                 		<tr th:each="cars : ${cars}">
                                             <td><a href="/soon"><h5><span th:text="${cars.carModel}"> Model </span></h5></a></td>
                                             <td><h5><span th:text="${cars.maxSpeed}"> Max Speed </span></h5></td>
-                                            <td><img th:src="${cars.description}"> Description </td>
                                         </tr>
                                         <tr>
                                         </table>

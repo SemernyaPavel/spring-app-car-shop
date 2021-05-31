@@ -66,15 +66,17 @@
                                     <h3>Need help choosing the first car?</h3>
                                     <h4>we would like to help you decide on your first choice!</h4>
                                     <blockquote class="quote indent-right">
-                                        <strong>This website template has several pages:  Home, Products, Technology, Pricing, Contacts</strong> Add something
-                                    <form th:action="@{/logout}" method="post">
-      							      <input type="submit" value="Sign Out"/>
-     							   </form>
-                                    </blockquote>
+                                    <input type='hidden' value='${_csrf.token}' name='${_csrf.parameterName}'/>
+                                    </blockquote>   
+                                    <strong>This website template has several pages:  Home, Products, Technology, Pricing, Contacts</strong> Add something
                                     <div class="alignright indent-right">
                                         <span class="author">John Smith <i>(manager)</i></span>
                                     </div>
                                 </div>
+                                <form th:action="@{/logout}" method="post">
+                                    	<input type='hidden' value='${_csrf.token}' name='${_csrf.parameterName}'/>
+      							        <input type="submit" value="Sign Out"/>
+     							   </form>
                                 <img src="images/banner-box-img.png" alt="" class="banner-box-img">
                             </article>
                         </div>
