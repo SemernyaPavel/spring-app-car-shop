@@ -45,17 +45,6 @@ public class CarsController {
 		return "newCar";
 	}
 	
-	@GetMapping("/{id}")
-	public String showOneCar(@PathVariable("id") Long id, Model model) {
-		
-		Optional<Car> car = carRepository.findById(id);
-
-		
-		model.addAttribute("car", car);
-		
-		return "oneCar";
-	}
-	
 	@PostMapping("/create")
 	public String addCar(@RequestParam String carModel,
 						@RequestParam int cost,
@@ -69,6 +58,25 @@ public class CarsController {
 		carRepository.save(car);
 		
 		return "redirect:/catalog";
+	}
+	
+	@GetMapping("/{id}")
+	public String showOneCar(@PathVariable("id") Long id, Model model) {
+		
+		Optional<Car> car = carRepository.findById(id);
+
+		
+		model.addAttribute("car", car);
+		
+		return "oneCar";
+	}
+	
+	@PostMapping("/{id}")
+	public String deleteCar(@RequestParam Long id) {
+		
+		carRepository.deleteById(id);
+		
+		return "redirect:catalog";
 	}
 	
 	@PostMapping

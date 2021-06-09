@@ -52,13 +52,23 @@
             <div class="wrapper">
          	<div class="grid_24 content-bg">
 				<div>
-					<h3> Model </h3><h5><span th:text="${car.get().carModel}"> Model </span></h5>
-					<h3> Cost </h3><h5><span th:text="${car.get().cost}"> Cost </span>$</h5>
-					<h3> Max Speed </h3><h5><span th:text="${car.get().maxSpeed}"> Max Speed </span></h5>
-	                <h3> Description </h3><h5><span th:text="${car.get().description}"> Description </span></h5>  
+					<h3> Model: </h3><h5><span th:text="${car.get().carModel}"> Model </span></h5>
+					<hr>
+					<h3> Cost: </h3><h5><span th:text="${car.get().cost}"> Cost </span>$</h5>
+					<hr>
+					<h3> Max Speed: </h3><h5><span th:text="${car.get().maxSpeed}"> Max Speed </span> km/h </h5>
+	                <hr>
+	                <h3> Description: </h3><h5><span th:text="${car.get().description}"> Description </span></h5>  
 				</div>
-        		</div>
-    		</div> 
+				<form method="post">
+					<div class="btns">
+					<fieldset>
+						<button type="submit">Delete this car</button>
+					</fieldset>
+					</div>
+				</form>
+        	</div>
+    	</div> 
     </div>
                       
     
@@ -94,9 +104,9 @@
                         </div>
                         <div class="grid_2 suffix_1 omega">
                         	<ul class="social-list">
-                            	<li><a href="/soon"><img src="images/social-icon-1.png" alt=""></a></li>
-                                <li><a href="/soon"><img src="images/social-icon-2.png" alt=""></a></li>
-                                <li><a href="/soon"><img src="images/social-icon-3.png" alt=""></a></li>
+                            	<li><a href="/soon"><img src="/images/social-icon-1.png" alt=""></a></li>
+                                <li><a href="/soon"><img src="/images/social-icon-2.png" alt=""></a></li>
+                                <li><a href="/soon"><img src="/images/social-icon-3.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
