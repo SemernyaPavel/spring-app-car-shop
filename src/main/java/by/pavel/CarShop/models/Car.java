@@ -17,7 +17,6 @@ public class Car {
 	private String description;
 	private String carModel;
 	private int maxSpeed;
-	@NotNull
 	private int cost;
 
 	public Car() {	}

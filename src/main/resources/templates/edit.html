@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   	<title>CarShop</title>
@@ -29,8 +29,6 @@
 
 <div class="main-bg">
     <!-- Header -->
-    
-    
     <header>
     	<div class="inner">
             <h1 class="logo"><a href="home">CarShop - Best company</a></h1>
@@ -45,37 +43,44 @@
         </div>
         
     </header>
-    
+     
     <div>
-    
     <div class="container_24">
             <div class="wrapper">
-         	<div class="grid_24 content-bg">
-				<div>
-					<h3> Model: </h3>
-					<h5><span th:text="${car.get().carModel}"> Model </span></h5>
-					<hr>
-					<h3> Cost: </h3>
-					<h5><span th:text="${car.get().cost}"> Cost </span>$</h5>
-					<hr>
-					<h3> Max Speed: </h3>
-					<h5><span th:text="${car.get().maxSpeed}"> Max Speed </span> km/h </h5>
-	                <hr>
-	                <h3> Description: </h3>
-	                <h5><span th:text="${car.get().description}"> Description </span></h5>  
-				</div>
-				<form method="post">
-					<div>
-						<button th:value="${car.get().id}" type="submit">Delete this car</button>
-					</div>
-				</form>
-				<h6 align="right"><a th:href="@{/catalog/{/id}/edit(id=${car.get().id})}">Edit car</a></h6>
-        	</div>
-    	</div> 
+            	<div class="grid_24 content-bg">
+                	<div class="wrapper">
+    					 <article class="grid_15 suffix_1 omega">
+                        	<h2>Change values</h2>
+                            <form th:method="PATCH" id="contact-form" >
+                              <fieldset>
+                                <label class="name">
+                                	<span>Car model</span>
+                                    <input th:field="${car.carModel}" type="text" name="carModel">
+                                </label>
+                                <label class="name">
+                                  <span>Cost($)</span>
+                                  <input th:field="${car.cost}" type="text" name="cost">
+                                </label>
+                                <label class="name">
+                                  <span>Maximum speed(km/h)</span>
+                                  <input th:field="${car.maxSpeed}" type="text" name="maxSpeed">
+                                </label>
+                                <label>
+                                  <span>Description</span>
+                                  <input th:field="${car.description}" type="text" name="description">
+                                </label>
+								<div align="center">
+						    		<button type="submit">Update car</button>
+						    	</div>
+    						</fieldset>
+    						</form>
+    	</article>
+    		</div>
+    		</div>
+    	</div>
     </div>
-                      
-    
-    <!-- Footer -->
+ 
+ <!-- Footer -->
          <footer>
     	<div class="container_24">
         	<div class="wrapper">
