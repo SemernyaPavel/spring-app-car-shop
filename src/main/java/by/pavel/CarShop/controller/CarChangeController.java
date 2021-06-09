@@ -54,10 +54,10 @@ public class CarChangeController {
 	
 	@PatchMapping("/{id}/edit")
 	public String updateCar(@RequestParam String carModel,
-							@RequestParam int cost,
-							@RequestParam int maxSpeed,
-							@RequestParam String description,
-							@PathVariable("id") Long id) {
+			@RequestParam int cost,
+			@RequestParam int maxSpeed,
+			@RequestParam String description,
+			@PathVariable("id") Long id) {
 		
 		Optional<Car> car = carRepository.findById(id);
 		car.get().setCarModel(carModel);
