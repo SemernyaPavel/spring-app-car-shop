@@ -20,13 +20,16 @@ import by.pavel.CarShop.repos.CarRepository;
 @Controller
 @RequestMapping("/catalog")
 public class CarsController {
+	
 	@Autowired
 	private CarRepository carRepository;
 	
 	
 	@GetMapping
 	public String showCarCatalog(Map<String, Object> model) {
+		
 		Iterable<Car> cars = carRepository.findAll();
+		
 		
 		model.put("cars", cars);
 		
@@ -35,16 +38,21 @@ public class CarsController {
 	
 	@GetMapping("/create")
 	public String addNewCar(Map<String, Object> model) {
+		
 		Iterable<Car> cars = carRepository.findAll();
 		model.put("cars", cars);
+		
 		return "newCar";
 	}
 	
 	@GetMapping("/{id}")
-	public String showOneCar(@PathVariable("id") int id, Model model) {
-		Optional<Car> optionalCar = carRepository.findById((long) id);
-		Car car = optionalCar.get();
+	public String showOneCar(@PathVariable("id") Long id, Model model) {
+		
+		Optional<Car> car = carRepository.findById(id);
+
+		
 		model.addAttribute("car", car);
+		
 		return "oneCar";
 	}
 	
@@ -54,7 +62,9 @@ public class CarsController {
 						@RequestParam int maxSpeed,
 						@RequestParam String description, 
 						Map<String, Object> model) {
+		
 		Car car = new Car(carModel, cost, maxSpeed, description);
+		
 		
 		carRepository.save(car);
 		
@@ -71,6 +81,7 @@ public class CarsController {
 		}else {
 			cars = carRepository.findAll();
 		}
+		
 		
 		model.put("cars", cars);
 		return "catalog";

@@ -16,18 +16,11 @@ public class MainController {
 		return "soon";
 	}
 	
-	@GetMapping("/technology")
-	public String technology() {
-		return "technology";
-	}
 	
 	@GetMapping("/contacts")
 	public String contacts() {
 		return "contacts";
 	}
 	
-	@GetMapping("/pricing")
-	public String pricing() {
-		return "pricing";
-	}
+	
 }

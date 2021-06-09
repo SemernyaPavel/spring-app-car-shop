@@ -38,7 +38,6 @@
                 <ul class="sf-menu">
                     <li><a href="home">home</a></li>
                     <li class="current"><a href="catalog">catalog</a></li>
-                    <li><a href="pricing">pricing</a></li>
                     <li><a href="contacts">contacts</a></li>
                 </ul>
             </nav>
@@ -75,7 +74,7 @@
                                     	</tr>
                                         <tr th:if="${cars.empty}"><h4>No Car Available</h4></tr>
                                 		<tr th:each="cars : ${cars}">
-                                            <td><a th:href="@{/catalog/{/id}(id=${cars.id})}"><h5><span th:text="${cars.carModel}"> Model </span></h5></a></td>
+                                            <td><h5><a th:href="@{/catalog/{/id}(id=${cars.id})}"><span th:text="${cars.carModel}"> Model </span></a></h5></td>
                                             <td><h5><span th:text="${cars.cost}"> Cost </span>$</h5></td>
                                         </tr>
                                         <tr>

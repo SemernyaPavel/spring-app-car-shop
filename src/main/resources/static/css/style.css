@@ -23,8 +23,6 @@ html {min-width:960px;}
 	background:url(../images/main-bg.jpg) no-repeat center 0;
 	min-height:100%;
 }
-/*----- alignment & clearing -----*/
-
 /*  Header styles */
 h1,h2,h3,h4,h5,h6{
 	color:#fff;
@@ -41,10 +39,6 @@ h6{font-size:20px; line-height:24px;}
 .heading-1 {
 	color:#b30404;
 }
-/*----- text & typography -----*/
-
-/*----- borders & lines -----*/
-
 /*----- boxes -----*/
 .banner-box {
 	background:#292929;
@@ -75,8 +69,6 @@ h6{font-size:20px; line-height:24px;}
 	right:0;
 	bottom:0;
 }
-/*----- indents -----*/
-
 /*----- lists -----*/
 .list-1 {padding:0 0 20px 0;}
 .list-1 li {
@@ -96,10 +88,6 @@ h6{font-size:20px; line-height:24px;}
 		.list-1 li a:hover {
 			color:#fff;
 		}
-
-/*----- buttons & links -----*/
-
-
 /*********************************header*************************************/
 header{
 	position:relative;
@@ -284,11 +272,7 @@ nav {
 }
 
 .sf-menu li li:hover ul,ul.sf-menu li li.sfHover ul{left:186px;top:0;}
-
-
-
 /********************** Content ************************/
-
 section#content {
 	position:relative; 
 	z-index:1;
@@ -365,7 +349,6 @@ section#content {
 	text-align:right;
 	margin:0 6px 0 0;
 }
-
 /******************** Footer ******************/
 footer {
 	color:#717171;
