@@ -1,14 +1,14 @@
 # spring-app-car-shop
 My first app
 
-Technologies:
+> Technologies:
 
-Spring Boot
-Spring Security
-Spring Data 
-Spring MVC
-Lombok.DB
-JDBC
-PostgreSql
-OpenAPI
-Frontend: HTML, CSS, JS.
+> > Spring Boot
+> > Spring Security
+> > Spring Data 
+> > Spring MVC
+> > Lombok.DB
+> > JDBC
+> > PostgreSql
+> > OpenAPI
+> > Frontend: HTML, CSS, JS.
