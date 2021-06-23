@@ -1,13 +1,14 @@
 # spring-app-car-shop
-CRUD app
+My first app
+
 Technologies:
 
-*Spring Boot
-*Spring Security
-*Spring Data Jpa
-*Spring MVC
-*Lombok.DB
-*JDBC
-*PostgreSql
-*OpenAPI
-*Frontend: HTML, CSS, JS.
+Spring Boot
+Spring Security
+Spring Data 
+Spring MVC
+Lombok.DB
+JDBC
+PostgreSql
+OpenAPI
+Frontend: HTML, CSS, JS.
